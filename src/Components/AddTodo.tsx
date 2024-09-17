@@ -39,7 +39,7 @@ const AddTodo = ({onTodoAdd}: Props) => {
                         Enter Title and Description of todo and save to add todo in list.
                     </p>
 
-                    <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                    <div className="mt-5 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                         <div className="col-span-full">
                             <label htmlFor="title" className="block text-sm font-medium leading-6 text-gray-900">
                                 Title
@@ -76,7 +76,7 @@ const AddTodo = ({onTodoAdd}: Props) => {
                         </div>
                     </div>
                     <Button type={"submit"}
-                            className={"inline-flex mt-2 items-center gap-2 rounded-md bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white"}>Add</Button>
+                            className={"inline-flex mt-2 items-center gap-2 rounded-md border py-1.5 px-3 text-sm/6 font-semibold shadow-inner shadow-white/10 focus:outline-none data-[focus]:outline-1 data-[focus]:outline-white"}>Add</Button>
                 </div>
             </div>
         </form>
