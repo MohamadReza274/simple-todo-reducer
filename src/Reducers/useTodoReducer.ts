@@ -11,19 +11,19 @@ interface AddTodoAction {
 }
 
 interface RemoveTodoAction {
-    type:"REMOVE";
+    type: "REMOVE";
     todoId: number;
 }
 
-type TodoAction = AddTodoAction | RemoveTodoAction;
+export type TodoAction = AddTodoAction | RemoveTodoAction;
 
 
-const useTodoReducer = (todos: Todo[], action: TodoAction):Todo[] => {
+const useTodoReducer = (todos: Todo[], action: TodoAction): Todo[] => {
     switch (action.type) {
         case "ADD":
             return [action.todo, ...todos];
         case "REMOVE":
-            return todos.filter(todo =>  todo.id !== action.todoId);
+            return todos.filter(todo => todo.id !== action.todoId);
         default:
             return todos;
     }
