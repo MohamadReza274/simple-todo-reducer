@@ -1,9 +1,8 @@
-import {Todo} from "../Reducers/useTodoReducer.ts";
-import TodoContext from "../TodoContext.ts";
-import {useContext} from "react";
+import {Todo} from "./useTodoReducer.ts";
+import {useTodos} from "./index.ts";
 
 const TodoList = () => {
-    const {todos} = useContext(TodoContext);
+    const {todos} = useTodos();
     return (
         <ul role="list" className="space-y-3">
             {

@@ -1,15 +1,14 @@
 import {Button} from "@headlessui/react";
-import React, {useContext, useState} from "react";
-import TodoContext from "../TodoContext.ts";
+import React, {useState} from "react";
+import useTodos from "./useTodos.tsx";
+
+const uid = () => {
+    return Date.now()
+}
 
 const AddTodo = () => {
-
     const [todo, setTodo] = useState({title: "", description: ""});
-    const {dispatch} = useContext(TodoContext);
-
-    const uid = () => {
-        return Date.now()
-    }
+    const {dispatch} = useTodos();
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -22,7 +21,6 @@ const AddTodo = () => {
 
     const handleChangeTodo = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const {name, value} = e.target;
-
         setTodo(prevState => {
             return {...prevState, [name]: value}
         })
