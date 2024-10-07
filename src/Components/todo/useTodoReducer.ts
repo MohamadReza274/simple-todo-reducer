@@ -15,7 +15,13 @@ interface RemoveTodoAction {
     todoId: number;
 }
 
-export type TodoAction = AddTodoAction | RemoveTodoAction;
+interface UpdateTodoAction {
+    type: "UPDATE";
+    todoId:number;
+    updatedTodo:Todo;
+}
+
+export type TodoAction = AddTodoAction | RemoveTodoAction | UpdateTodoAction;
 
 
 const useTodoReducer = (todos: Todo[], action: TodoAction): Todo[] => {
@@ -24,6 +30,9 @@ const useTodoReducer = (todos: Todo[], action: TodoAction): Todo[] => {
             return [action.todo, ...todos];
         case "REMOVE":
             return todos.filter(todo => todo.id !== action.todoId);
+            case "UPDATE": 
+            return todos.map(todo => todo.id === action.todoId ? action.updatedTodo : todo)
+
         default:
             return todos;
     }

@@ -7,8 +7,7 @@ import {
   MenuItem,
   MenuItems,
 } from "@headlessui/react";
-import { UserIcon } from "@heroicons/react/16/solid";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, UserIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import logo from "../assets/logo.jpeg";
 
 const navigation = [
@@ -23,7 +22,7 @@ function classNames(...classes: string[]) {
 
 const Navbar = () => {
   return (
-    <Disclosure as="nav" className="">
+    <Disclosure as="nav" className="border-b ">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
